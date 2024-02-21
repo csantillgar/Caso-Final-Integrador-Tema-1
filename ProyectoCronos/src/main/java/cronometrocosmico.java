@@ -15,7 +15,19 @@ public class cronometrocosmico {
         double segundosNuevoPlaneta = (minutosNuevoPlaneta * 60)%1;
 
         int dias= (int)tiempoNuevoPlaneta;
+        int horas= (int)(diasNuevoPlaneta * 24);
+        int minutos= (int)(horasNuevoPlaneta * 60);
+        int segundos= (int)(minutosNuevoPlaneta * 60);
 
+        System.out.println("Tiempo en el nuevo planeta: ");
+        System.out.println(dias + " días, " + horas + " horas, " + minutos + " minutos, " + segundos + " segundos.");
+    }
+    // Límites de repreesentación de datos
+    public static void identificarLimitesRepresentacion(){
+        System.out.println("Mayor numero representable en el nuevo planeta (dias): " + Double.MAX_VALUE);
+        System.out.println("Mayor valor representable en el nuevo planeta (horas): " + (Double.MAX_VALUE / 24));
+        System.out.println("Mayor valor representable en el nuevo planeta (minutos): " + (Double.MAX_VALUE / (24 * 60)));
+        System.out.println("Mayor valor representable en el nuevo planeta (segundos): " + (Double.MAX_VALUE / (24 * 60 * 60)));
     }
 
 
