@@ -30,18 +30,11 @@ public class cronometrocosmico {
         System.out.println("Mayor valor representable en el nuevo planeta (segundos): " + (Double.MAX_VALUE / (24 * 60 * 60)));
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
+    public static void main(String[] args) {
+        double tiempoTierra = 365*24*60*60;//Equivalente a un año en segundos enla tierra.
+        visualizarTiempo(tiempoTierra);
+        identificarLimitesRepresentacion();
+    }
 
 
 }
