@@ -1,40 +1,63 @@
+//código realizado en clase 22/02/2024
+import java.util.Date;
+
 public class cronometrocosmico {
-//Definimos las constantes para los factores de conversión
-    private static final double TIERRA_DIAS_ANUALES = 365.25;
-    private static final double CRONOS_DIAS_ANUALES = 687;//Dato inventado dias anuales de cronos.
-    public static double convertirTiempo(double tiempoTierra){
-    return tiempoTierra * (CRONOS_DIAS_ANUALES / TIERRA_DIAS_ANUALES);
-}
-//Visualizar tiempo en varios formatos
-    public static void visualizarTiempo(double tiempoTierra){
-        double tiempoNuevoPlaneta = convertirTiempo(tiempoTierra);
 
-        double diasNuevoPlaneta = tiempoNuevoPlaneta % 1;
-        double horasNuevoPlaneta = (diasNuevoPlaneta * 24)%1;
-        double minutosNuevoPlaneta= (horasNuevoPlaneta * 60)%1;
-        double segundosNuevoPlaneta = (minutosNuevoPlaneta * 60)%1;
+    //Atributos de instancia: cada objeto tendrá un valor para estos atributos
+    Date fechaPlanetaTierra;
+    Date fechaNuevoPlaneta;
 
-        int dias= (int)tiempoNuevoPlaneta;
-        int horas= (int)(diasNuevoPlaneta * 24);
-        int minutos= (int)(horasNuevoPlaneta * 60);
-        int segundos= (int)(minutosNuevoPlaneta * 60);
+    //Atributos de clase: existe un único valor que se almacena en la clase
+    static long FC = 2;//FC: Factor de conversión
 
-        System.out.println("Tiempo en el nuevo planeta: ");
-        System.out.println(dias + " días, " + horas + " horas, " + minutos + " minutos, " + segundos + " segundos.");
-    }
-    // Límites de repreesentación de datos
-    public static void identificarLimitesRepresentacion(){
-        System.out.println("Mayor numero representable en el nuevo planeta (dias): " + Double.MAX_VALUE);
-        System.out.println("Mayor valor representable en el nuevo planeta (horas): " + (Double.MAX_VALUE / 24));
-        System.out.println("Mayor valor representable en el nuevo planeta (minutos): " + (Double.MAX_VALUE / (24 * 60)));
-        System.out.println("Mayor valor representable en el nuevo planeta (segundos): " + (Double.MAX_VALUE / (24 * 60 * 60)));
+    //Métodos constructores
+    public cronometrocosmico() {
+        fechaPlanetaTierra = new Date();
+        long fnp= this.fechaPlanetaTierra.getTime();//fnp:fecha nuevo planeta
+        fechaNuevoPlaneta = new Date((long)(fnp*cronometrocosmico.getFC()));
     }
 
-    public static void main(String[] args) {
-        double tiempoTierra = 365*24*60*60;//Equivalente a un año en segundos enla tierra.
-        visualizarTiempo(tiempoTierra);
-        identificarLimitesRepresentacion();
+    //Metodos de instancia
+    //getters y setters
+    public Date getFechaPlanetaTierra() {
+        return fechaPlanetaTierra;
+        //Devuelve el valor del atributo del objeto
     }
 
+    public Date getFechaNuevoPlaneta() {
+        return fechaNuevoPlaneta;
+    }
+
+    public void setFechaPlanetaTierra(Date fechaPlanetaTierra) {
+        this.fechaPlanetaTierra = fechaPlanetaTierra;
+        //Asigna al atributo del objeto el valor en el parámetro
+    }
+
+    public void setFechaNuevoPlaneta(Date fechaNuevoPlaneta) {
+        this.fechaNuevoPlaneta = fechaNuevoPlaneta;
+    }
+
+
+    //Metodos de clase
+    //getters y setters
+    public static double getFC() {
+        return FC;
+    }
+    public static void setFC(long FC) {
+        cronometrocosmico.FC = FC;
+        //Asigna al atributo de clase el valor indicado en el parámetro
+    }
+
+    //Método toString: perimite obtener la representacion textuañ del objeto
+
+
+
+    @Override
+    public String toString() {
+        return "{"+
+                "fechaPlanetaTierra=" + fechaPlanetaTierra +
+                "\n, fechaNuevoPlaneta=" + fechaNuevoPlaneta +
+                '}';
+    }
 
 }
