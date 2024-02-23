@@ -22,7 +22,12 @@ public class Main {
         //Wrap clases
         System.out.println("Max. Entero: "+Integer.MAX_VALUE);
 
-
+        recurso agua = new recurso("Agua", 100);
+        recurso comida = new recurso("Comida", 50);
+        recurso oxigeno = new recurso("Oxigeno", 200);
+        recursosysuministros recursosysuministros = new recursosysuministros();
+        recursosysuministros.agregarRecurso(agua);
+        recursosysuministros.agregarRecurso(comida);
 
 
 
