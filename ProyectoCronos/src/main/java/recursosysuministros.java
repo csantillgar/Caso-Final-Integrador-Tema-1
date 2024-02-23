@@ -9,10 +9,17 @@ public class recurso {
         this.nombre = nombre;
         this.cantidad = cantidad;
     }
+    public String getNombre(){
+        return nombre;
+    }
+    public double getCantidad(){
+        return cantidad;
+    }
+
+    public void setCantidad(double cantidad){
+        this.cantidad = cantidad;
+    }
 }
-
-
-
 public class recursosysuministros {
     private List<recurso> recursos;
     public recursosysuministros(){
