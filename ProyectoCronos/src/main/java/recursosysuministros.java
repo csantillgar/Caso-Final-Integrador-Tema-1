@@ -25,5 +25,16 @@ public class recursosysuministros {
     public recursosysuministros(){
         this.recursos = new ArrayList<>();
     }
+    public void agregarRecurso(recurso recurso){
+        recursos.add(recurso);
+    }
+    public double calcularConsumoTotal(){
+        double consumoTotal = 0;
+        for(recurso recurso: recursos){
+            consumoTotal += recurso.getCantidad();
+        }
+        return consumoTotal;
+    }
+
 
 }
