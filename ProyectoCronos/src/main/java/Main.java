@@ -28,6 +28,13 @@ public class Main {
         recursosysuministros recursosysuministros = new recursosysuministros();
         recursosysuministros.agregarRecurso(agua);
         recursosysuministros.agregarRecurso(comida);
+        recursosysuministros.agregarRecurso(oxigeno);
+
+        System.out.println("Consumo total de recursos: "+recursosysuministros.calcularConsumoTotal());
+        System.out.println("Consumo promedio de recursos: "+recursosysuministros.calcularConsumoPromedio());
+        System.out.println("Consumo minimo de recursos: "+recursosysuministros.calcularConsumoMinimo());
+        System.out.println("Consumo maximo de recursos: "+recursosysuministros.calcularConsumoMaximo());
+
 
 
 
