@@ -44,7 +44,17 @@ public class Main {
         sistemaalertamonitoreo.monitorear("Radiacion", 0.015);
         sistemaalertamonitoreo.monitorear("Humedad",0.5);
 
-        List<String> tiposEventos = sistemaAlertaMonitoreo.obtenerTiposEventos();
+        List<String> tiposEventos = sistemaalertamonitoreo.obtenerTiposEventos();
+        List<Double> valoresEventos = sistemaalertamonitoreo.obtenerValoresEventos();
+
+        for (int i = 0; i < tiposEventos.size(); i++){
+            System.out.println("Evento: "+tiposEventos.get(i)+" valor: "+valoresEventos.get(i));
+        }
+        List<String> eventosRaros = sistemaalertamonitoreo.obtenerEventosRaros(5);
+        System.out.println("Primeros eventos raros: "+eventosRaros);
+
+        List<Long> factoresPrimos = sistemaalertamonitoreo.descomponerEnFactoresPrimos(100);
+        System.out.println("Factores primos de 100: "+factoresPrimos);
 
 
 
