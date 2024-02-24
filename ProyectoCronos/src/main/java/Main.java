@@ -1,5 +1,6 @@
 import java.text.DateFormat;
 import java.util.Date;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
@@ -35,6 +36,15 @@ public class Main {
         System.out.println("Consumo minimo de recursos: "+recursosysuministros.calcularConsumoMinimo());
         System.out.println("Consumo maximo de recursos: "+recursosysuministros.calcularConsumoMaximo());
 
+        sistemaalertamonitoreo sistemaalertamonitoreo = new sistemaalertamonitoreo();
+
+        //Simulación de eventos
+        sistemaalertamonitoreo.monitorear("Temperatura", 30.5);
+        sistemaalertamonitoreo.monitorear("Presion", 1001.2);
+        sistemaalertamonitoreo.monitorear("Radiacion", 0.015);
+        sistemaalertamonitoreo.monitorear("Humedad",0.5);
+
+        List<String> tiposEventos = sistemaAlertaMonitoreo.obtenerTiposEventos();
 
 
 
