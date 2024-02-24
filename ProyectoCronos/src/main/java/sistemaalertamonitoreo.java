@@ -18,7 +18,20 @@ public class sistemaalertamonitoreo {
     private void verificarEvento(String tipo, double valor){
         System.out.println("Nuevo evento: "+tipo+" valor:  "+valor);
     }
-
+    public List<String> obtenerTiposEventos(){
+        return tiposEventos;
+    }
+    public List<Double> obtenerValoresEventos(){
+        return valoresEventos;
+    }
+    public List<String> obtenerEventosRaros(int n){
+        //Logica para identificar los n primeros eventos raros pero en este ejemplo se devuelve una lista vacia
+        return new ArrayList<>();
+    }
+    public List<Long> descomponerEnFactoresPrimos(long numero){
+        //Logica para descomponer un numero en factores primos pero en este casp se devuelve una lista vacia
+        return new ArrayList<>();
+    }
 }
 
 
