@@ -12,7 +12,13 @@ public class sistemaalertamonitoreo {
     public void monitorear(String tipo, double valor){
         tiposEventos.add(tipo);
         valoresEventos.add(valor);
+
+    verificarEvento(tipo, valor);
     }
+    private void verificarEvento(String tipo, double valor){
+        System.out.println("Nuevo evento: "+tipo+" valor:  "+valor);
+    }
+
 }
 
 
