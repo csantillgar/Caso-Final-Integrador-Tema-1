@@ -9,6 +9,10 @@ public class sistemaalertamonitoreo {
         this.tiposEventos = new ArrayList<>();
         this.valoresEventos = new ArrayList<>();
     }
+    public void monitorear(String tipo, double valor){
+        tiposEventos.add(tipo);
+        valoresEventos.add(valor);
+    }
 }
 
 
