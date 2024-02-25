@@ -2,30 +2,32 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.HashMap;
 import java.util.Map;
-public class planificadortareas {
-    private List<tripulante> tripulacion;
+public class IV__planificadortareas {
+    private List<IV_tripulante> tripulacion;
     private Map<String, Integer> cargaTrabajoTripulantes;
-    public planificadortareas(){
+    public IV__planificadortareas(){
         this.tripulacion = new ArrayList<>();
         this.cargaTrabajoTripulantes = new HashMap<>();
     }
-    public void agregarTripulante(tripulante tripulante){
-        tripulacion.add(tripulante);
-        cargaTrabajoTripulantes.put(tripulante.getNombre(), 0);
+    public void agregarTripulante(IV_tripulante IV_tripulante){
+        tripulacion.add(IV_tripulante);
+        cargaTrabajoTripulantes.put(IV_tripulante.getNombre(), 0);
     }
     public void distribuirTareas(List<Integer> tareas){
         if (tareas.size() != tripulacion.size()){
             throw new IllegalArgumentException("La cantidad de tareas debe coincidir con la cantidad de tripulantes");
         }
-        for (int i = 0; i < tripulacion.size(); i++){
-            tripulacion.get(i).agregarTarea(tareas.get(i));
-            int cargaAnterior = cargaTrabajoTripulantes.get(tripulante.getNombre());
-            cargaTrabajoTripulantes.put(tripulante.getNombre(), cargaAnterior + tareas.get(i));
+
+        for (int i = 0; i < tripulacion.size(); i++) {
+            IV_tripulante tripulante = tripulacion.get(i);
+            int tarea = tareas.get(i);
+            tripulante.agregarTarea(tarea);
+            cargaTrabajoTripulantes.put(tripulante.getNombre(), cargaTrabajoTripulantes.getOrDefault(tripulante.getNombre(), 0) + tarea);
         }
     }
     public void visualizarHorarios(){
-        for (tripulante tripulante : tripulacion) {
-            System.out.println("Tripulante: " + tripulante.getNombre() + ", Carga de trabajo: " + tripulante.getCargaTrabajo());
+        for (IV_tripulante IV_tripulante : tripulacion) {
+            System.out.println("Tripulante: " + IV_tripulante.getNombre() + ", Carga de trabajo: " + IV_tripulante.getCargaTrabajo());
         }
         }
     public int obtenerCargaTrabajo(String nombreTripulante) {

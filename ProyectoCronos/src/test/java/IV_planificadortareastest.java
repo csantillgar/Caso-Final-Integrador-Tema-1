@@ -1,12 +1,12 @@
 import org.junit.Test;
 import java.util.Arrays;
 import static org.junit.Assert.assertEquals;
-public class planificadortareastest {
+public class IV_planificadortareastest {
     @Test
     public void distribuirTareas_Correcto(){
-        planificadortareas planificador = new planificadortareas();
-        planificador.agregarTripulante(new tripulante("Tripulante 1"));
-        planificador.agregarTripulante(new tripulante("Tripulante 2"));
+        IV__planificadortareas planificador = new IV__planificadortareas();
+        planificador.agregarTripulante(new IV_tripulante("Tripulante 1"));
+        planificador.agregarTripulante(new IV_tripulante("Tripulante 2"));
 
         planificador.distribuirTareas(Arrays.asList(5, 7));
 
@@ -15,13 +15,13 @@ public class planificadortareastest {
     }
     @Test(expected = IllegalArgumentException.class)
     public void distribuirTareas_TripulanteNoExiste(){
-        planificadortareas planificador = new planificadortareas();
+        IV__planificadortareas planificador = new IV__planificadortareas();
         planificador.distribuirTareas(Arrays.asList(5));
     }
     @Test(expected = IllegalArgumentException.class)
     public void distribuirTareas_TareasExcedenTripulacion(){
-        planificadortareas planificador = new planificadortareas();
-        planificador.agregarTripulante(new tripulante("Tripulante 1"));
+        IV__planificadortareas planificador = new IV__planificadortareas();
+        planificador.agregarTripulante(new IV_tripulante("Tripulante 1"));
         planificador.distribuirTareas(Arrays.asList(5, 7));
     }
 }

@@ -2,19 +2,19 @@ import org.testng.annotations.Test;
 import static org.junit.Assert.*;
 import java.util.Date;
 
-public class cronometrocosmicotest {
+public class I_cronometrocosmicotest {
 
     @Test
     public void testFechaPlanetaTierraInicializadaCorrectamente() {
-        cronometrocosmico cronometro = new cronometrocosmico();
+        I_cronometrocosmico cronometro = new I_cronometrocosmico();
         assertNotNull(cronometro.getFechaPlanetaTierra());
     }
 
     @Test
     public void testFechaNuevoPlanetaCalculadaCorrectamente() {
-        cronometrocosmico cronometro = new cronometrocosmico();
+        I_cronometrocosmico cronometro = new I_cronometrocosmico();
         Date fechaPlanetaTierra = cronometro.getFechaPlanetaTierra();
-        long factorConversion = (long) cronometrocosmico.getFC();
+        long factorConversion = (long) I_cronometrocosmico.getFC();
         long fechaEsperada = fechaPlanetaTierra.getTime() * factorConversion;
         assertEquals(fechaEsperada, cronometro.getFechaNuevoPlaneta().getTime());
     }
@@ -22,7 +22,7 @@ public class cronometrocosmicotest {
     @Test
     public void testSetFC() {
         long nuevoFC = 3;
-        cronometrocosmico.setFC(nuevoFC);
-        assertEquals(nuevoFC, cronometrocosmico.getFC(), 0.001);
+        I_cronometrocosmico.setFC(nuevoFC);
+        assertEquals(nuevoFC, I_cronometrocosmico.getFC(), 0.001);
     }
 }

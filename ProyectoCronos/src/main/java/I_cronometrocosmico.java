@@ -1,7 +1,7 @@
 //código realizado en clase 22/02/2024
 import java.util.Date;
 
-public class cronometrocosmico {
+public class I_cronometrocosmico {
 
     //Atributos de instancia: cada objeto tendrá un valor para estos atributos
     Date fechaPlanetaTierra;
@@ -11,10 +11,10 @@ public class cronometrocosmico {
     static long FC = 2;//FC: Factor de conversión
 
     //Métodos constructores
-    public cronometrocosmico() {
+    public I_cronometrocosmico() {
         fechaPlanetaTierra = new Date();
         long fnp= this.fechaPlanetaTierra.getTime();//fnp:fecha nuevo planeta
-        fechaNuevoPlaneta = new Date((long)(fnp*cronometrocosmico.getFC()));
+        fechaNuevoPlaneta = new Date((long)(fnp* I_cronometrocosmico.getFC()));
     }
 
     //Metodos de instancia
@@ -44,7 +44,7 @@ public class cronometrocosmico {
         return FC;
     }
     public static void setFC(long FC) {
-        cronometrocosmico.FC = FC;
+        I_cronometrocosmico.FC = FC;
         //Asigna al atributo de clase el valor indicado en el parámetro
     }
 

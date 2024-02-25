@@ -1,8 +1,8 @@
-public class recurso {
+public class II_recurso {
     private String nombre;
     private double cantidad;
 
-    public recurso(String nombre, double cantidad){
+    public II_recurso(String nombre, double cantidad){
         this.nombre = nombre;
         this.cantidad = cantidad;
     }

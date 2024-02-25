@@ -1,8 +1,8 @@
-public class tripulante {
+public class IV_tripulante {
     private static String nombre;
     private int cargaTrabajo;
 
-    public tripulante(String nombre){
+    public IV_tripulante(String nombre){
         this.nombre = nombre;
         this.cargaTrabajo = 0;
     }
