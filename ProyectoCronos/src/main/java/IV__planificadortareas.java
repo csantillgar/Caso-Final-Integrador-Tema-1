@@ -21,6 +21,8 @@ public class IV__planificadortareas {
         for (int i = 0; i < tripulacion.size(); i++) {
             IV_tripulante tripulante = tripulacion.get(i);
             int tarea = tareas.get(i);
+
+
             tripulante.agregarTarea(tarea);
             cargaTrabajoTripulantes.put(tripulante.getNombre(), cargaTrabajoTripulantes.getOrDefault(tripulante.getNombre(), 0) + tarea);
         }
