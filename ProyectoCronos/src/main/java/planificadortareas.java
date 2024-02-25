@@ -33,6 +33,8 @@ public class planificadortareas {
             throw new IllegalArgumentException("El tripulante no existe.");
         }
         return cargaTrabajoTripulantes.get(nombreTripulante);
+
+
     }
     }
 

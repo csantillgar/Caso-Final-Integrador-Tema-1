@@ -18,4 +18,10 @@ public class planificadortareastest {
         planificadortareas planificador = new planificadortareas();
         planificador.distribuirTareas(Arrays.asList(5));
     }
+    @Test(expected = IllegalArgumentException.class)
+    public void distribuirTareas_TareasExcedenTripulacion(){
+        planificadortareas planificador = new planificadortareas();
+        planificador.agregarTripulante(new tripulante("Tripulante 1"));
+        planificador.distribuirTareas(Arrays.asList(5, 7));
+    }
 }
