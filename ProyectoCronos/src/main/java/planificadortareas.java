@@ -16,7 +16,13 @@ public class planificadortareas {
             tripulacion.get(i).agregarTarea(tareas.get(i));
         }
     }
-    public void visualizarHorarios
+    public void visualizarHorarios(){
+        for (Tripulante tripulante : tripulacion) {
+            System.out.println("Tripulante: " + tripulante.getNombre() + ", Carga de trabajo: " + tripulante.getCargaTrabajo());
+        }
+        }
+
+    }
 
 
 }
