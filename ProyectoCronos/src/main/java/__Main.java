@@ -66,5 +66,11 @@ public class __Main {
         planificador.distribuirTareas(Arrays.asList(5, 7, 3));
 
         planificador.visualizarHorarios();
+
+        V_navegadorestelar navegador = new V_navegadorestelar(5, 5);
+
+        navegador.generarTerrenoAleatorio();
+        System.out.println("Terreno generado aleatoriamente:");
+        navegador.visualizarTerreno();
     }
 }
