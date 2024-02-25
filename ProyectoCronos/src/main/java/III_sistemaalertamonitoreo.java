@@ -35,26 +35,31 @@ public class III_sistemaalertamonitoreo {
     }
     public List<String> obtenerEventosRaros(int n) {
         List<String> eventosRaros = new ArrayList<>();
-        Map<String, Long> conteoEventos = tiposEventos.stream()
-                .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
-        for (Map.Entry<String, Long> entry : conteoEventos.entrySet()) {
-            if (entry.getValue() >= n) {
-                eventosRaros.add(entry.getKey());
-            }
-        }
+        int contadorTemperaturaAlta = 0; // Inicializar el contador fuera del bucle
 
-        int contadorTemperaturaAlta = 0; // Reiniciar el contador
         for (int i = 0; i < tiposEventos.size(); i++) {
             if (tiposEventos.get(i).equals("Temperatura") && valoresEventos.get(i) > 100) {
                 contadorTemperaturaAlta++;
                 if (contadorTemperaturaAlta >= n) {
                     eventosRaros.add("Temperatura alta");
-                    break; // Salir del bucle una vez que se agregue "Temperatura alta"
                 }
             }
         }
+
+        // Agregar eventos raros de otros tipos
+        Map<String, Long> conteoEventos = tiposEventos.stream()
+                .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+        List<String> eventosComunes = conteoEventos.entrySet().stream()
+                .filter(entry -> entry.getValue() >= n)
+                .map(Map.Entry::getKey)
+                .collect(Collectors.toList());
+        eventosRaros.addAll(tiposEventos.stream()
+                .filter(evento -> !eventosComunes.contains(evento))
+                .collect(Collectors.toList()));
+
         return eventosRaros;
     }
+
 
 
     public List<Long> descomponerEnFactoresPrimos(long n){

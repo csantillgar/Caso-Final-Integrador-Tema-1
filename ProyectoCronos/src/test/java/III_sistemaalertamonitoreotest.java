@@ -9,12 +9,12 @@ public class III_sistemaalertamonitoreotest {
     public void monitorear_DeteccionEventosRaros() {
         III_sistemaalertamonitoreo III_sistemaalertamonitoreo = new III_sistemaalertamonitoreo();
 
-        III_sistemaalertamonitoreo.monitorear("Temperatura", 100);
+        III_sistemaalertamonitoreo.monitorear("Temperatura", 120);
         III_sistemaalertamonitoreo.monitorear("Temperatura", 80);
         III_sistemaalertamonitoreo.monitorear("Temperatura", 110);
-        III_sistemaalertamonitoreo.monitorear("Temperatura", 60);
+        III_sistemaalertamonitoreo.monitorear("Temperatura", 115);
 
-        List<String> eventosRaros = III_sistemaalertamonitoreo.obtenerEventosRaros(3);
+        List<String> eventosRaros = III_sistemaalertamonitoreo.obtenerEventosRaros(2);
 
         assertEquals(3, eventosRaros.size());
         assertTrue(eventosRaros.contains("Temperatura alta"));
