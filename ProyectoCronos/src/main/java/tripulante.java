@@ -1,5 +1,5 @@
 public class tripulante {
-    private String nombre;
+    private static String nombre;
     private int cargaTrabajo;
 
     public tripulante(String nombre){
