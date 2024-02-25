@@ -2,10 +2,63 @@ import java.text.DateFormat;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
+import java.util.Scanner;
 
 public class __Main {
-    public static void main(String[] args) {
 
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int opcion;
+
+        do {
+            mostrarMenu();
+            System.out.print("Seleccione una opción: ");
+            opcion = scanner.nextInt();
+            scanner.nextLine(); // Limpiar el buffer del scanner
+
+            switch (opcion) {
+                case 1:
+                    cronometroCosmico();
+                    break;
+                case 2:
+                    recursosYSuministros();
+                    break;
+                case 3:
+                    sistemaAlertaMonitoreo();
+                    break;
+                case 4:
+                    planificadorTareas();
+                    break;
+                case 5:
+                    navegadorEstelar();
+                    break;
+                case 6:
+                    comunicadorInterplanetario();
+                    break;
+                case 0:
+                    System.out.println("Saliendo del programa...");
+                    break;
+                default:
+                    System.out.println("Opción no válida. Por favor, seleccione una opción del menú.");
+                    break;
+            }
+        } while (opcion != 0);
+
+        scanner.close();
+    }
+
+    private static void mostrarMenu() {
+        System.out.println("\n--- Menú ---");
+        System.out.println("1. Cronómetro Cósmico");
+        System.out.println("2. Recursos y Suministros");
+        System.out.println("3. Sistema de Alerta y Monitoreo");
+        System.out.println("4. Planificador de Tareas");
+        System.out.println("5. Navegador Estelar");
+        System.out.println("6. Comunicador Interplanetario");
+        System.out.println("0. Salir");
+    }
+
+    private static void cronometroCosmico() {
         Date myDate1 = new Date();
         String myString = DateFormat.getDateInstance().format(myDate1);
         System.out.println("Fecha1: " + myString);
@@ -20,7 +73,9 @@ public class __Main {
 
         I_cronometrocosmico cc1 = new I_cronometrocosmico();
         System.out.println("cc1: " + cc1.toString());
+    }
 
+    private static void recursosYSuministros() {
         // Wrap clases
         System.out.println("Max. Entero: " + Integer.MAX_VALUE);
 
@@ -36,7 +91,9 @@ public class __Main {
         System.out.println("Consumo promedio de recursos: " + II__recursosysuministros.calcularConsumoPromedio());
         System.out.println("Consumo mínimo de recursos: " + II__recursosysuministros.calcularConsumoMinimo());
         System.out.println("Consumo máximo de recursos: " + II__recursosysuministros.calcularConsumoMaximo());
+    }
 
+    private static void sistemaAlertaMonitoreo() {
         III_sistemaalertamonitoreo III_sistemaalertamonitoreo = new III_sistemaalertamonitoreo();
 
         // Simulación de eventos
@@ -57,7 +114,9 @@ public class __Main {
 
         List<Long> factoresPrimos = III_sistemaalertamonitoreo.descomponerEnFactoresPrimos(100);
         System.out.println("Factores primos de 100: " + factoresPrimos);
+    }
 
+    private static void planificadorTareas() {
         IV__planificadortareas planificador = new IV__planificadortareas();
 
         planificador.agregarTripulante(new IV_tripulante("Tripulante 1"));
@@ -67,13 +126,17 @@ public class __Main {
         planificador.distribuirTareas(Arrays.asList(5, 7, 3));
 
         planificador.visualizarHorarios();
+    }
 
+    private static void navegadorEstelar() {
         V_navegadorestelar navegador = new V_navegadorestelar(5, 5);
 
         navegador.generarTerrenoAleatorio();
         System.out.println("Terreno generado aleatoriamente:");
         navegador.visualizarTerreno();
+    }
 
+    private static void comunicadorInterplanetario() {
         String mensaje = "Bienvenido a Cronos";
         System.out.println("Mensaje original: " + mensaje);
         System.out.println("Cantidad de vocales: " + VI_comunicadorinterplanetario.contarVocales(mensaje));
@@ -81,4 +144,7 @@ public class __Main {
         System.out.println("¿Es palíndromo? " + VI_comunicadorinterplanetario.esPalindromo(mensaje));
     }
 }
+
+       
+
 
