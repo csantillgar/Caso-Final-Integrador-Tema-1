@@ -1,5 +1,8 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 public class III_sistemaalertamonitoreo {
     private List<String> tiposEventos;
@@ -30,14 +33,27 @@ public class III_sistemaalertamonitoreo {
     public List<Double> obtenerValoresEventos(){
         return valoresEventos;
     }
-    public List<String> obtenerEventosRaros(int n){
+    public List<String> obtenerEventosRaros(int n) {
         List<String> eventosRaros = new ArrayList<>();
+        if (tiposEventos.size() >= n) {
+            Map<String, Long> conteoEventos = tiposEventos.stream()
+                    .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+            List<String> eventosComunes = conteoEventos.entrySet().stream()
+                    .filter(entry -> entry.getValue() >= n)
+                    .map(Map.Entry::getKey)
+                    .collect(Collectors.toList());
+            eventosRaros.addAll(tiposEventos.stream()
+                    .filter(evento -> !eventosComunes.contains(evento))
+                    .collect(Collectors.toList()));
+        }
         int contadorTemperaturaAlta = 0;
         for (int i = 0; i < tiposEventos.size(); i++) {
             if (tiposEventos.get(i).equals("Temperatura") && valoresEventos.get(i) > 100) {
                 contadorTemperaturaAlta++;
                 if (contadorTemperaturaAlta >= n) {
                     eventosRaros.add("Temperatura alta");
+
+                    return eventosRaros;
                 }
             }
         }
