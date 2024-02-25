@@ -1,6 +1,7 @@
 import java.text.DateFormat;
 import java.util.Date;
 import java.util.List;
+import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
@@ -56,11 +57,14 @@ public class Main {
         List<Long> factoresPrimos = sistemaalertamonitoreo.descomponerEnFactoresPrimos(100);
         System.out.println("Factores primos de 100: "+factoresPrimos);
 
+        planificadortareas planificador= new planificadortareas();
 
+        planificador.agregarTripulante(new tripulante("Tripulante 1"));
+        planificador.agregarTripulante(new tripulante("Tripulante 2"));
+        planificador.agregarTripulante(new tripulante("Tripulante 3"));
 
+        planificador.distribuirTareas(Arrays.asList(5, 7, 3));
 
-
+        planificador.visualizarHorarios();
     }
-
-
 }
