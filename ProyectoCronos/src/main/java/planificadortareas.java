@@ -1,11 +1,11 @@
 import java.util.ArrayList;
 import java.util.List;
 public class planificadortareas {
-    private List<Tripulante> tripulacion;
+    private List<tripulante> tripulacion;
     public planificadortareas(){
         this.tripulacion = new ArrayList<>();
     }
-    public void agregarTripulante(Tripulante tripulante){
+    public void agregarTripulante(tripulante tripulante){
         tripulacion.add(tripulante);
     }
     public void distribuirTareas(List<Integer> tareas){
@@ -17,7 +17,7 @@ public class planificadortareas {
         }
     }
     public void visualizarHorarios(){
-        for (Tripulante tripulante : tripulacion) {
+        for (tripulante tripulante : tripulacion) {
             System.out.println("Tripulante: " + tripulante.getNombre() + ", Carga de trabajo: " + tripulante.getCargaTrabajo());
         }
         }
