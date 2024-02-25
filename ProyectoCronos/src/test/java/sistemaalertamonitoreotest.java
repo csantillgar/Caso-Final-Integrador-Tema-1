@@ -20,5 +20,28 @@ public class sistemaalertamonitoreotest {
         assertTrue(eventosRaros.contains("Temperatura alta"));
     }
 
+    @Test
+    public void descomponerEnFactoresPrimos_Correcto() {
+        sistemaalertamonitoreo sistemaalertamonitoreo = new sistemaalertamonitoreo();
+
+        List<Long> factoresPrimos = sistemaalertamonitoreo.descomponerEnFactoresPrimos(100);
+
+        assertArrayEquals(new Long[]{2L, 2L, 5L, 5L}, factoresPrimos.toArray());
     }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void monitorear_DatosAnomalos(){
+        sistemaalertamonitoreo sistemaalertamonitoreo = new sistemaalertamonitoreo();
+
+        sistemaalertamonitoreo.monitorear("Temperatura", -10);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void monitorear_DatosFaltantes() {
+        sistemaalertamonitoreo sistemaalertamonitoreo = new sistemaalertamonitoreo();
+
+        sistemaalertamonitoreo.monitorear("",50);
+    }
+
+}
 
