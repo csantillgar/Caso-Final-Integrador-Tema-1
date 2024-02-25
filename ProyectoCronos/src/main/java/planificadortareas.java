@@ -28,6 +28,11 @@ public class planificadortareas {
             System.out.println("Tripulante: " + tripulante.getNombre() + ", Carga de trabajo: " + tripulante.getCargaTrabajo());
         }
         }
-
+    public int obtenerCargaTrabajo(String nombreTripulante) {
+        if (!cargaTrabajoTripulantes.containsKey(nombreTripulante)) {
+            throw new IllegalArgumentException("El tripulante no existe.");
+        }
+        return cargaTrabajoTripulantes.get(nombreTripulante);
+    }
     }
 
