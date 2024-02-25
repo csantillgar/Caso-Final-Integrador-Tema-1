@@ -8,6 +8,10 @@ public class VI_comunicadorinterplanetariotest {
     public void testContarVocales() {
         assertEquals(3, VI_comunicadorinterplanetario.contarVocales("Hello World"));
     }
+    @Test
+    public void testInvertirMensaje() {
+        assertEquals("dlroW olleH", VI_comunicadorinterplanetario.invertirMensaje("Hello World"));
+    }
 
 
 }
