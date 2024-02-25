@@ -12,6 +12,12 @@ public class VI_comunicadorinterplanetariotest {
     public void testInvertirMensaje() {
         assertEquals("dlroW olleH", VI_comunicadorinterplanetario.invertirMensaje("Hello World"));
     }
+    @Test
+    public void testEsPalindromo() {
+        assertTrue(VI_comunicadorinterplanetario.esPalindromo("madam"));
+        assertTrue(VI_comunicadorinterplanetario.esPalindromo("A man a plan a canal Panama"));
+        assertFalse(VI_comunicadorinterplanetario.esPalindromo("hello"));
+    }
 
 
 }
