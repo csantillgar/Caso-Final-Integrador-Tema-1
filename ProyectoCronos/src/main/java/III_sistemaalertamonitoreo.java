@@ -31,8 +31,17 @@ public class III_sistemaalertamonitoreo {
         return valoresEventos;
     }
     public List<String> obtenerEventosRaros(int n){
-        //Logica para identificar los n primeros eventos raros pero en este ejemplo se devuelve una lista vacia
-        return new ArrayList<>();
+        List<String> eventosRaros = new ArrayList<>();
+        int contadorTemperaturaAlta = 0;
+        for (int i = 0; i < tiposEventos.size(); i++) {
+            if (tiposEventos.get(i).equals("Temperatura") && valoresEventos.get(i) > 100) {
+                contadorTemperaturaAlta++;
+                if (contadorTemperaturaAlta >= n) {
+                    eventosRaros.add("Temperatura alta");
+                }
+            }
+        }
+        return eventosRaros;
     }
     public List<Long> descomponerEnFactoresPrimos(long n){
         List<Long> factoresPrimos = new ArrayList<>();
@@ -42,7 +51,7 @@ public class III_sistemaalertamonitoreo {
                 n /= i;
             }
         }
-        return new ArrayList<>();
+        return factoresPrimos;
     }
 }
 
