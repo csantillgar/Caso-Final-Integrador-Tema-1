@@ -9,11 +9,17 @@ public class III_sistemaalertamonitoreo {
         this.tiposEventos = new ArrayList<>();
         this.valoresEventos = new ArrayList<>();
     }
-    public void monitorear(String tipo, double valor){
-        tiposEventos.add(tipo);
+    public void monitorear(String tipoDato, double valor){
+        if(valor<0){
+            throw new IllegalArgumentException("El valor no puede ser negativo");
+        }
+        if(tipoDato == null || tipoDato.isEmpty()){
+            throw new IllegalArgumentException("El tipo de dato no puede ser nulo o vacio");
+        }
+        tiposEventos.add(tipoDato);
         valoresEventos.add(valor);
 
-    verificarEvento(tipo, valor);
+    verificarEvento(tipoDato, valor);
     }
     private void verificarEvento(String tipo, double valor){
         System.out.println("Nuevo evento: "+tipo+" valor:  "+valor);
