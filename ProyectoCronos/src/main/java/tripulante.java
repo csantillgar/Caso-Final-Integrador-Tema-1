@@ -12,5 +12,8 @@ public class tripulante {
     public int getCargaTrabajo(){
         return cargaTrabajo;
     }
+    public void agregarTarea(int cargaTarea){
+        cargaTrabajo += cargaTarea;
+    }
 
 }
