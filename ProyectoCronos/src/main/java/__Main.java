@@ -72,5 +72,12 @@ public class __Main {
         navegador.generarTerrenoAleatorio();
         System.out.println("Terreno generado aleatoriamente:");
         navegador.visualizarTerreno();
+
+        String mensaje = "Bienvenido a Cronos";
+        System.out.println("Mensaje original: " + mensaje);
+        System.out.println("Cantidad de vocales: " + VI_comunicadorinterplanetario.contarVocales(mensaje));
+        System.out.println("Mensaje invertido: " + VI_comunicadorinterplanetario.invertirMensaje(mensaje));
+        System.out.println("¿Es palíndromo? " + VI_comunicadorinterplanetario.esPalindromo(mensaje));
+
     }
 }
