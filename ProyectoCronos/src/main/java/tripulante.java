@@ -6,7 +6,7 @@ public class tripulante {
         this.nombre = nombre;
         this.cargaTrabajo = 0;
     }
-    public String getNombre(){
+    public static String getNombre(){
         return nombre;
     }
     public int getCargaTrabajo(){
